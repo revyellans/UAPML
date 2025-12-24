@@ -115,11 +115,15 @@ DistilBERT dipilih untuk implementasi dashboard karena memberikan keseimbangan t
 
 ---
 
-## 🌐 Panduan Menjalankan Sistem Website Secara Lokal
+## 🖥️ Panduan Menjalankan Sistem Website Secara Lokal
 
-### 🔧 1. Persiapan
-Pastikan Python ≥ 3.10 telah terpasang.
+Sistem klasifikasi gender berdasarkan nama ini dijalankan secara lokal menggunakan Python, PDM sebagai package manager, dan Streamlit sebagai framework dashboard. Pastikan Python versi 3.10 atau lebih baru telah terpasang di perangkat. Repository proyek terlebih dahulu di-clone dari GitHub dan pengguna masuk ke direktori utama proyek melalui terminal. PDM kemudian digunakan untuk mengelola environment dan dependency proyek, sehingga seluruh library yang dibutuhkan dapat terisolasi dengan baik.
 
-Masuk ke direktori proyek:
-```bash
-cd uapml-DistillBert
+Setelah masuk ke folder proyek, pastikan PDM telah terpasang dengan menjalankan perintah `python -m pdm --version`. Jika belum tersedia, PDM dapat diinstal menggunakan `python -m pip install --user pdm`. Selanjutnya, seluruh dependency proyek diinstal melalui file `pyproject.toml` dengan perintah `python -m pdm install`. Apabila terdapat library yang belum terinstal, seperti `streamlit`, `torch`, `transformers`, dan `numpy`, library tersebut dapat ditambahkan menggunakan `python -m pdm add streamlit torch transformers numpy`.
+
+Struktur direktori proyek harus sesuai, dengan folder model hasil training (misalnya `gender_name_distilbert_model`) berada di root project dan berisi file penting seperti `model.safetensors`, `config.json`, dan file tokenizer. Folder `src` berisi file utama aplikasi `app.py` serta subfolder `inference` yang memuat file `predictor.py` sebagai modul inference model.
+
+Setelah seluruh dependency dan struktur folder siap, dashboard dijalankan menggunakan perintah `python -m pdm run streamlit run src/app.py`. Aplikasi Streamlit akan otomatis berjalan dan dapat diakses melalui browser pada alamat `http://localhost:8501`. Pada dashboard, pengguna dapat memasukkan nama pada kolom input, kemudian menekan tombol prediksi untuk memperoleh hasil klasifikasi gender berdasarkan model DistilBERT yang telah dilatih sebelumnya.
+
+Apabila tampilan dashboard kosong, pastikan aplikasi dijalankan menggunakan perintah `streamlit run` dan bukan dengan menjalankan file Python secara langsung. Jika terjadi error model tidak ditemukan, pastikan path folder model sudah sesuai dan seluruh file model tersedia lengkap. Untuk menghentikan aplikasi, pengguna dapat menekan `CTRL + C` pada terminal. Dengan demikian, sistem klasifikasi gender berbasis website dapat dijalankan secara lokal dengan baik.
+
