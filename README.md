@@ -41,21 +41,7 @@ Tahapan preprocessing yang dilakukan meliputi:
 
 ## 🤖 Model yang Digunakan
 
-### 1️⃣ Model Machine Learning (Baseline)
-
-Model Machine Learning digunakan sebagai baseline untuk perbandingan.
-
-**Karakteristik:**
-- Ekstraksi fitur menggunakan **TF-IDF**
-- Algoritma klasifikasi seperti Logistic Regression atau Naive Bayes
-- Cepat dan ringan
-
-**Kekurangan:**
-- Tidak mampu menangkap pola urutan karakter secara mendalam
-
----
-
-### 2️⃣ Model Deep Learning Non-Pretrained (RNN)
+### 1️⃣ Model Deep Learning Non-Pretrained (RNN)
 
 Model ini dibangun menggunakan **Recurrent Neural Network (RNN)** dan dilatih dari awal tanpa bobot pretrained.
 
@@ -73,7 +59,7 @@ Model ini dibangun menggunakan **Recurrent Neural Network (RNN)** dan dilatih da
 
 ---
 
-### 3️⃣ Model Pretrained Language Model (BERT)
+### 2️⃣ Model Pretrained Language Model (BERT)
 
 **BERT (Bidirectional Encoder Representations from Transformers)** merupakan model berbasis Transformer yang dilatih secara bidirectional sehingga mampu memahami konteks teks dari dua arah.
 
@@ -92,7 +78,7 @@ Model ini dibangun menggunakan **Recurrent Neural Network (RNN)** dan dilatih da
 
 ---
 
-### 4️⃣ Model Pretrained Language Model (DistilBERT)
+### 3️⃣ Model Pretrained Language Model (DistilBERT)
 
 DistilBERT merupakan versi ringan dari BERT yang dikembangkan melalui teknik knowledge distillation.
 
